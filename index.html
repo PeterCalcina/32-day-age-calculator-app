@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nombre del autor">
+    <meta name="description" content="Descripcion del proyecto">
+    <!-- Biblioteca de íconos Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Archivo reset Normalize -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <title>Age Calculator App</title>
+    <!-- Biblioteca de Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+</head>
+
+<body>
+
+    <main class="card">
+        <div class="card__enter_date">
+            <div class="input_group">
+                <label for="day">DAY</label>
+                <input type="number" id="day" min="1" max="31" placeholder="DD">
+                <span class="error">This field is required</span>
+            </div>
+
+            <div class="input_group">
+                <label for="month">MONTH</label>
+                <input type="number" id="month" min="1" max="12" placeholder="MM">
+                <span class="error">This field is required</span>
+            </div>
+
+            <div class="input_group">
+                <label for="year">YEAR</label>
+                <input type="number" id="year" min="1" max="12" placeholder="YYYY">
+                <span class="error">This field is required</span>
+            </div>
+
+            <button id="calculate" onclick="calculateAge()">
+                <img src="images/icon-arrow.svg" alt="Icon Arrow">
+            </button>
+        </div>
+
+        <div class="card__age_result">
+            <h2 class="year_result">
+                <span class="number" id="year_result">- -</span>
+                years
+            </h2>
+
+            <h2 class="month_result">
+                <span class="number" id="month_result">- -</span>
+                months
+            </h2>
+
+            <h2 class="day_result">
+                <span class="number" id="day_result">- -</span>
+                days
+            </h2>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

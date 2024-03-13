@@ -1,0 +1,228 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+  /* Paleta de colores */
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+  /* Tipografia */
+  --font-family: 'Poppins', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-size-inputs: 32px;
+}
+
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  color: var(--smokey-grey);
+  background-color: var(--off-white);
+}
+
+/* Estilo card */
+
+.card {
+  width: 680px;
+  height: auto;
+  padding: 2.5rem 3rem 2rem 2.5rem;
+  background-color: var(--white);
+  border-radius: 25px 25px 25% 25px;
+}
+
+.card .card__enter_date {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 35px;
+  border-bottom: solid 1px var(--light-grey);
+}
+
+.card .card__enter_date .input_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 140px;
+}
+
+.card .card__enter_date .input_group label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: var(--font-weight-bold);
+  color: var(--smokey-grey);
+  transition: color .3s ease;
+}
+
+.card .card__enter_date .input_group label.error {
+  color: var(--light-red);
+}
+
+.card .card__enter_date .input_group input {
+  width: 100%;
+  padding: .8rem 1rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 5px;
+  font-size: var(--font-size-inputs);
+  font-weight: var(--font-weight-bold);
+  color: var(--off-black);
+  transition: all .3s ease;
+}
+
+.card .card__enter_date .input_group input[type="number"]::-webkit-inner-spin-button,
+.card .card__enter_date .input_group input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.card .card__enter_date .input_group input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.card .card__enter_date .input_group input::placeholder {
+  opacity: .8;
+}
+
+.card .card__enter_date .input_group input:focus {
+  outline: none;
+  border-color: var(--off-black);
+}
+
+.card .card__enter_date .input_group input:hover {
+  border-color: var(--off-black);
+  cursor: pointer;
+}
+
+.card .card__enter_date .input_group input.error {
+  border-color: var(--light-red);
+}
+
+.card .card__enter_date .input_group span.error {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--light-red);
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.card .card__enter_date .input_group .error.active {
+  opacity: 1;
+}
+
+.card .card__enter_date button {
+  position: absolute;
+  bottom: -25%;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--purple);
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.card .card__enter_date button:hover {
+  background-color: var(--off-black)
+}
+
+.card .card__enter_date button img {
+  width: 33px;
+  height: 33px;
+}
+
+.card .card__age_result {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+.card .card__age_result h2 {
+  display: flex;
+  gap: 10px;
+  font-style: italic;
+  font-size: 5rem;
+  font-weight: var(--font-weight-extra-bold);
+  color: var(--off-black);
+}
+
+.card .card__age_result h2 span {
+  color: var(--purple);
+}
+
+/* Media Queries */
+@media (width < 769px) {
+  .card {
+    width: 90%;    
+    padding: 3rem 2rem;
+  }
+
+  .card .card__enter_date .input_group {
+    width: 30%;
+  }
+
+  .card .card__enter_date .input_group input {
+    padding: 1rem;
+    font-size: 18px;
+  }
+
+  .card .card__enter_date button {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .card .card__age_result {
+    padding-top: 65px;
+  }
+
+  .card .card__age_result h2 {
+    font-size: 53px;
+  }
+}
+
+@media (width < 376px) {
+  .card .card__enter_date .input_group {
+    width: 40%;
+  }
+
+  .card .card__enter_date .input_group input {
+    padding: .8rem;
+    font-size: 16px;
+  }
+
+  .card .card__age_result h2 {
+    font-size: 48px;
+  }
+}
